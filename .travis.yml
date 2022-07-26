@@ -1,0 +1,12 @@
+sudo: required
+
+services:
+  - docker
+
+before_install:
+  - docker build -t duong120798/react-app-dev -f Dockerfile.dev .
+
+script:
+  - docker run -e CI=true duong120798/react-app-dev npm run test -- --coverage
+
+language: node_js
