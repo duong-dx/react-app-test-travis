@@ -15,7 +15,7 @@ script:
   # for dev
   #- docker run duong120798/react-app-dev:ci -e CI=true npm run test -- --coverage
   # for production
-  - docker run -p 80:80 duong120798/react-app-production:ci -e CI=true
+  - docker run -p 80:80 duong120798/react-app-production:ci
 
 deploy:
   provider: elasticbeanstalk
