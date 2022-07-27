@@ -1,29 +1,10 @@
 version: '3'
 
 services:
-  react-app:
+  web:
     container_name: 'react-app'
-    restart: always
-    build: 
-      context: ./
-      dockerfile: Dockerfile.dev
-    stdin_open: true
+    build:
+      context: .
+      dockerfile: Dockerfile
     ports:
-      - '3000:3000'
-    working_dir: /usr/src/app
-    environment:
-      - CHOKIDAR_USEPOLLING=true
-    volumes:
-          - ./:/usr/src/app
-          - /usr/src/app/node_modules
-  test-react-app:
-    container_name: 'test-react-app'
-    build: 
-      context: ./
-      dockerfile: Dockerfile.dev
-    stdin_open: true
-    working_dir: /usr/src/app
-    volumes:
-          - ./:/usr/src/app
-          - /usr/src/app/node_modules
-    command: ["npm", "run", "test"]
+      - '80:80'
