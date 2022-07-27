@@ -9,7 +9,7 @@ before_install:
   # for dev
   - docker build -t duong120798/react-app-dev:ci -f Dockerfile.dev .
   # for production
-  - docker build -t duong120798/react-app-production:ci -f Dockerfile .
+  #- docker build -t duong120798/react-app-production:ci -f Dockerfile .
 script:
 
   # for dev
